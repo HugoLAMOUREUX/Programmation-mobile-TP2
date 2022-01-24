@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="tVide">TextView</string>
+    <string name="desc">Description</string>
+    <string name="image">Image</string>
+    <string name="duree">Duree</string>
+    <string name="titre">Titre</string>
+    <string name="logo">Logo</string>
+    <string name="t4" >Description</string>
+    <string name="dureeAjout">Durée</string>
+    <string name="descriptionAjout">Description</string>
+    <string name="catAjout">Catégorie</string>
+    <string name="nameAjout">Nom</string>
+    <string name="t1" >Nom</string>
+    <string name="t2" >Duree</string>
+    <string name="okBtnAjout">OK</string>
+    <string name="erreuremplissage"></string>
+    <string name="confirmationSupr">Voulez vous vraiment supprimer cette tache ?</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>
