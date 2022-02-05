@@ -21,7 +21,6 @@
         android:onClick="onAjoutBtnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ajoutbtn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/ajoutbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
