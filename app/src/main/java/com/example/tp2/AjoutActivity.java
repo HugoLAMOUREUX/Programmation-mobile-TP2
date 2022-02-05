@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class AjoutActivity extends AppCompatActivity {
     TextInputEditText titre;
     TextInputEditText duree;
-    Spinner cat;
+    Spinner dropdown;
     TextInputEditText desc;
     TextView error;
 
@@ -27,27 +27,30 @@ public class AjoutActivity extends AppCompatActivity {
         titre=findViewById(R.id.inputTitre);
         duree=findViewById(R.id.inputDuree);
         desc=findViewById(R.id.inputDescription);
-        cat = (Spinner)findViewById(R.id.spinner1);
 
         /* Ajout des items au spinner */
 
-        Spinner dropdown = findViewById(R.id.spinner1);
+        dropdown = findViewById(R.id.spinner1);
         String[] items = new String[]{"Sport", "Enfants","Courses", "Menage","Lecture","Travail","Autre"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items); //android.R.layout.simple_spinner_dropdown_item
         dropdown.setAdapter(adapter);
     }
 
+    /* Fonction lancée quand on appuie sur le bouton OK */
     public void valider(View view){
         Intent data= new Intent();
+
+        /* Vérification du remplissage de champs */
         if(titre.getText().toString().equals("") || desc.getText().toString().equals("") || duree.getText().toString().equals("") ){
             error=findViewById(R.id.errorTv);
             error.setText("Merci de bien vouloir remplir les champs correctement !");
             return ;
         }
+        /* Passage des données */
         data.putExtra(Constantes.TACHE,""+titre.getText());
         data.putExtra(Constantes.DUREE,""+duree.getText());
         data.putExtra(Constantes.DESCRIPTION,""+desc.getText());
-        data.putExtra(Constantes.CATEGORIE,""+cat.getSelectedItem().toString());
+        data.putExtra(Constantes.CATEGORIE,""+dropdown.getSelectedItem().toString());
         setResult(Constantes.CODE_OK,data);
         finish();
     }

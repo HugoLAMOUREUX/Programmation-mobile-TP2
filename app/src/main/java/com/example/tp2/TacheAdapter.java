@@ -76,6 +76,7 @@ public class TacheAdapter extends RecyclerView.Adapter<TacheAdapter.MyViewHolder
             }
         }
 
+        /* Listener Clic rapide qui crée une intention avec les données et qui lance l'activité DetailActivity */
         holder.itemView.setOnClickListener((view) -> {
             Log.d("onClick", "tache" + mesTaches.get(position).getNom());
             Intent intent = new Intent(view.getContext(), DetailActivity.class);
@@ -87,6 +88,7 @@ public class TacheAdapter extends RecyclerView.Adapter<TacheAdapter.MyViewHolder
             view.getContext().startActivity(intent);
         });
 
+        /* Listener clic long qui lance une pop up demandant si l'utilisateur souhaite vraiment supprimer la tâche, si oui la supprime */
         holder.itemView.setOnLongClickListener((view) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
             builder.setMessage(R.string.confirmationSupr)
@@ -98,11 +100,10 @@ public class TacheAdapter extends RecyclerView.Adapter<TacheAdapter.MyViewHolder
                     })
                     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            adapter.notifyDataSetChanged();
                         }
                     });
             builder.create().show();
-            return true;// A REVOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIR 
+            return true;
         });
     }
 

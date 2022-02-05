@@ -25,8 +25,10 @@ public class DetailActivity extends AppCompatActivity {
         tvDescr=findViewById(R.id.descriptionId);
         ivImg=findViewById(R.id.imgId);
 
-
+        /* Récupération l'intention passée lors du click sur la tâche */
         Intent intent=this.getIntent();
+
+        /* Modification de la view avec les données récupérées */
         tvTache.setText(intent.getStringExtra(Constantes.TACHE));
         tvDuree.setText(""+intent.getIntExtra(Constantes.DUREE,0)+"min");
         tvDescr.setText(intent.getStringExtra(Constantes.DESCRIPTION));
